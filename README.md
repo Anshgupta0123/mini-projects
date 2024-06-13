@@ -1,1 +1,1 @@
-# minor-project1
+# Calculator as minor project
