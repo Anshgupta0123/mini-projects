@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .nested{
+        display: grid;
+        grid-template-columns: repeat(3,auto);
+    }
+    .wrapper{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: minmax(10px , auto);
+    }
+    .wrapper > div{
+        background-color: aqua;
+        border: 2px solid black;
+        color: blue;
+        padding : 10px;
+    }
+    .wrapper >div:nth-child(even){
+        background-color: blueviolet;
+    }
+    .nested div{
+        background-color: yellow;
+        border: 2px solid black;
+        padding: 2px;
+
+    }
+</style>
+<body>
+    <div class="wrapper">
+        <div>
+            Lorem ipsum dolor, sit amet 
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam fugiat reprehenderit neque beatae placeat repudiandae, velit, similique, in maiores optio odio a? Sed animi sint similique nemo eos quaerat quo.
+            Facere a fuga aspernatur atque vel aliquid perferendis fugiat laboriosam delectus dolores unde earum perspiciatis necessitatibus ducimus eaque nulla nesciunt vitae recusandae itaque, iusto, neque minus deserunt! Explicabo, amet sunt!
+            Est corporis mollitia unde ea corrupti ut repellendus quibusdam, error facere reiciendis assumenda fugit officia molestias numquam, beatae accusamus quia laborum obcaecati non autem vitae excepturi quis. Porro, placeat tempora?
+            Nesciunt inventore labore eius esse dolores delectus accusantium corporis quis, facilis ratione eligendi, aut doloribus ut? Sapiente omnis odio animi voluptatem ut, corrupti ullam. Nisi earum accusamus est odit error!
+        </div>
+        <div>
+            Lorem ipsum dolor, sit amet 
+        </div>
+        <div>
+            Lorem ipsum dolor, sit amet 
+        </div>
+        <div class="nested">
+            <div>lorem</div>
+            <div>lorem</div>
+            <div>lorem</div>
+            <div>lorem</div>
+            <div>lorem</div>
+            <div>lorem</div>
+        </div>
+        <div>
+            Lorem ipsum dolor, sit amet 
+        </div>
+    </div>
+</body>
+</html>

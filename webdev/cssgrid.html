@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .wrapper{
+        display: grid;
+        grid-template-columns: 30% 40% 30%;
+        grid-gap: 1em;
+    }
+    .wrapper > div{
+        background-color: aqua;
+        border: 2px solid black;
+        color: blue;
+        padding : 10px;
+    }
+    .wrapper >div:nth-child(even){
+        background-color: blueviolet;
+    }
+</style>
+<body>
+    <div class="wrapper">
+        <div>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur labore ullam dolor odit optio atque id magnam nobis, enim vero facilis, beatae sit voluptas perspiciatis a accusamus animi? Aliquam, dolorem.
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur labore ullam dolor odit optio atque id magnam nobis, enim vero facilis, beatae sit voluptas perspiciatis a accusamus animi? Aliquam, dolorem.
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur labore ullam dolor odit optio atque id magnam nobis, enim vero facilis, beatae sit voluptas perspiciatis a accusamus animi? Aliquam, dolorem.
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur labore ullam dolor odit optio atque id magnam nobis, enim vero facilis, beatae sit voluptas perspiciatis a accusamus animi? Aliquam, dolorem.
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur labore ullam dolor odit optio atque id magnam nobis, enim vero facilis, beatae sit voluptas perspiciatis a accusamus animi? Aliquam, dolorem.
+        </div>
+    </div>
+</body>
+</html>
