@@ -7,12 +7,12 @@ document.querySelector("#menu-bar").onclick = () => {
         barmenu.classList.toggle('active');
         cart.classList.remove('active');
     }
-    /*
+    
     barmenu.addEventListener('click',()=>{
         navbars.classList.toggle('fa-times');
         barmenu.classList.toggle('active');
     })
-    */
+    
 
 window.onscroll = () => {
 
@@ -68,7 +68,7 @@ let swiper = new Swiper(".home-slider", {
     },
     loop: true,
 });
-let countDate = new Date('june 1, 2023 00:00:00').getTime();
+let countDate = new Date('Dec 1, 2024 00:00:00').getTime();
 
 function countDown() {
 
