@@ -542,3 +542,13 @@ footer .copyright{
     color: #fff;
     font-weight: 600;
 }
+
+#pagination a:hover{
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #465b52;
+}
+#pagination a i {
+    font-size: 16px;
+    font-weight: 600;
+}
