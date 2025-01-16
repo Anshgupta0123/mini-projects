@@ -20,4 +20,5 @@ app.get("/health.checkup",function(req , res){
     res.status(400).json({"msg":"something is bad"})
 });
 
-app.listen(300);
+app.listen(3000);
+console.log("server is running on port 3000");

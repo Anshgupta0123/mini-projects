@@ -137,18 +137,6 @@
 //     title: "best",
 //     readingstatus: "true",
 //     price: "200",
-//     },
-//     {
-//     author: "jiya",
-//     title: "the bestest",
-//     readingstatus: "true",
-//     price: "10000",
-//     },
-//     {
-//     author: "we",
-//     title: "together",
-//     readingstatus: "true",
-//     price: "infinity",
 //     }
 // ];
 
