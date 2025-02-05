@@ -1,43 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>fetchcommand</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
-<style>
-    .wrapper{
-        display: grid;
-        grid-template-columns: 30% 40% 30%;
-        grid-gap: 1em;
-    }
-    .wrapper > div{
-        background-color: aqua;
-        border: 2px solid black;
-        color: blue;
-        padding : 10px;
-    }
-    .wrapper >div:nth-child(even){
-        background-color: blueviolet;
-    }
-</style>
+
 <body>
-    <div class="wrapper">
-        <div>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur labore ullam dolor odit optio atque id magnam nobis, enim vero facilis, beatae sit voluptas perspiciatis a accusamus animi? Aliquam, dolorem.
-        </div>
-        <div>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur labore ullam dolor odit optio atque id magnam nobis, enim vero facilis, beatae sit voluptas perspiciatis a accusamus animi? Aliquam, dolorem.
-        </div>
-        <div>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur labore ullam dolor odit optio atque id magnam nobis, enim vero facilis, beatae sit voluptas perspiciatis a accusamus animi? Aliquam, dolorem.
-        </div>
-        <div>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur labore ullam dolor odit optio atque id magnam nobis, enim vero facilis, beatae sit voluptas perspiciatis a accusamus animi? Aliquam, dolorem.
-        </div>
-        <div>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur labore ullam dolor odit optio atque id magnam nobis, enim vero facilis, beatae sit voluptas perspiciatis a accusamus animi? Aliquam, dolorem.
-        </div>
-    </div>
+  <div id="container">
+  </div>
+  <button onclick="getAnimals()">get animals</button>
+  <script>
+    async function getAnimals() {
+        const response = await fetch('https://fakerapi.it/api/v1/persons');
+        const data = await response.json();
+        document.getElementById('container').innerHTML = JSON.stringify(data);
+    }
+  </script>
 </body>
+
 </html>

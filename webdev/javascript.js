@@ -211,3 +211,16 @@
 // console.log(arr2);
 // arr2.reverse();
 // console.log(arr2);
+
+// var arr = [1,2,3,4,5,6];
+// arr = arr.map((val) => val* 10);
+// console.log(arr);
+
+const person = {
+    age: 30,
+    name: "john",
+    occupation:"developer",
+};
+
+const{age , name , occupation} = person;
+console.log(person);
