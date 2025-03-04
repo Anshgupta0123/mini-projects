@@ -24,24 +24,18 @@ const User = mongoose.model('users', new mongoose.Schema({
 
 app.post('/signin', async function (req, res) {
     const { username, password, name } = req.body;
-
     try {
         let user = await User.findOne({ username });
-
         if (!user) {
-            // If user does not exist, create and save a new one
             user = new User({ username, name, password });
             await user.save();
             return res.status(201).json({ message: 'User created successfully', user });
         }
-
         if (user.password !== password) {
             return res.status(403).json({ msg: 'Incorrect password' });
         }
-
         const token = jwt.sign({ username: user.username }, jwtPassword);
         return res.json({ message: 'User signed in successfully', token });
-
     } catch (err) {
         console.error('Error:', err);
         return res.status(500).json({ error: 'Internal Server Error' });
