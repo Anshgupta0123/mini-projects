@@ -1,56 +1,6 @@
-<!DOCTYPE html>
-<html>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<head>
-		<title>Euler Fluid</title>
-		<style>
-			body {
-				font-family: verdana; 
-				font-size: 15px;
-			}			
-			.button {
-				background-color: #606060;
-				border: none;
-				color: white;
-				padding: 10px 10px;
-				font-size: 16px;
-				margin: 4px 2px;
-				cursor: pointer;
-			}
-			.slider {
-				-webkit-appearance: none;
-				width: 80px;
-				height: 6px;
-				border-radius: 5px;
-				background: #d3d3d3;
-				outline: none;
-				opacity: 0.7;
-				-webkit-transition: .2s;
-				transition: opacity .2s;
-			}
-		</style>
-	</head>
-	
-<body>
-
-	<button class="button" onclick="setupScene(1)">Wind Tunnel</button>
-	<button class="button" onclick="setupScene(3)">Hires Tunnel</button>
-	<button class="button" onclick="setupScene(0)">Tank</button>
-	<button class="button" onclick="setupScene(2)">Paint</button>
-	<input type = "checkbox" id = "streamButton" onclick = "scene.showStreamlines = !scene.showStreamlines">Streamlines
-	<input type = "checkbox" id = "velocityButton" onclick = "scene.showVelocities = !scene.showVelocities">Velocities
-	<input type = "checkbox" name = "field" id = "pressureButton" onclick = "scene.showPressure = !scene.showPressure;"> Pressure
-	<input type = "checkbox" name = "field" id = "smokeButton" onclick = "scene.showSmoke = !scene.showSmoke;" checked>Smoke
-	<input type = "checkbox" id = "overrelaxButton" onclick = "scene.overRelaxation = scene.overRelaxation == 1.0 ? 1.9 : 1.0" checked>Overrelax
-	<br>
-	<canvas id="myCanvas" style="border:2px solid"></canvas>
-	
-<script>
-
-	var canvas = document.getElementById("myCanvas");
+    var canvas = document.getElementById("myCanvas");
 	var c = canvas.getContext("2d");	
-	canvas.width = window.innerWidth - 20;
+	canvas.width = window.innerWidth - 10;
 	canvas.height = window.innerHeight - 100;
 
 	canvas.focus();
@@ -73,7 +23,6 @@
 		return canvas.height - y * cScale;
 	}
 
-	// ----------------- start of simulator ------------------------------
 
 	class Fluid {
 		constructor(density, numX, numY, h) {
@@ -278,7 +227,6 @@
 			this.m.set(this.newM);
 		}
 
-		// ----------------- end of simulator ------------------------------
 
 
 		simulate(dt, gravity, numIters) {
@@ -301,7 +249,7 @@
 		numIters : 100,
 		frameNr : 0,
 		overRelaxation : 1.9,
-		obstacleX : 0.0,
+		obstacleX : 0.1,
 		obstacleY : 0.0,
 		obstacleRadius: 0.15,
 		paused: false,
@@ -317,7 +265,7 @@
 	function setupScene(sceneNr = 0) 
 	{
 		scene.sceneNr = sceneNr;
-		scene.obstacleRadius = 0.15;
+		scene.obstacleRadius = 0.10;
 		scene.overRelaxation = 1.9;
 
 		scene.dt = 1.0 / 60.0;
@@ -337,7 +285,7 @@
 		var numX = Math.floor(domainWidth / h);
 		var numY = Math.floor(domainHeight / h);
 
-		var density = 1000.0;
+		var density = 100.0;
 
 		f = scene.fluid = new Fluid(density, numX, numY, h);
 
@@ -760,6 +708,3 @@
 	setupScene(1);
 	update();
 	
-</script> 
-</body>
-</html>
